@@ -31,6 +31,8 @@ RUN apt-get update \
         procps \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+    && mkdir /usr/share/cups/model/khouia
+    && wget https://s3.eu-west-3.amazonaws.com/www.hopcast.fr/files/brother-HL1110-cups-en.ppd /usr/share/cups/model/khouia
 
 COPY rootfs /
 
